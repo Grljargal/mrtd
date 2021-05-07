@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zamteever</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body class="bg-sarl overflow-x-hidden">
+    <div class="flex flex-row"> 
+        <!-- Menu -->
+        <div>
+            <div class="flex h-200 bg-sarl sticky top-0">
+            <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
+                class="bg-huh fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
+
+            <div :class="translate-x-0 ease-out' : '-translate-x-full ease-in' "
+                class=" bg-huh fixed z-30 inset-y-0 left-0 w-60 transition duration-300 transform bg-white dark:bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+                <div class="flex items-center justify-center mt-8">"
+                    <div class="flex items-center">
+                        <span class="text-gray-800 dark:text-white text-2xl font-semibold"></span>
+                    </div>
+                </div>
+                <img src="img/logo3.png" class="w-auto h-22 mx-auto md:h-17.5">
+                <nav class="flex flex-col top-0 px-4  md:flex font-sub ">
+                    <a href="#"
+                        class="mt-3 py-2 text-sm inline-block cursor-pointer text-white hover:text-ulbar transition-colors duration-700 ease-out lg: px-6 border-b-dashed border-b border-b-white">НҮҮР ХУУДАС</a>
+                    <a href="#"
+                        class="mt-3 py-2 text-sm inline-block cursor-pointer text-white hover:text-ulbar transition-colors duration-700 ease-out lg: px-6 border-b-dashed border-b border-b-white">ЯАМНЫ ТУХАЙ</a>
+                    <a href="#"
+                        class="mt-3 py-2 inline-block  inline-block cursor-pointer text-white hover:text-ulbar transition-colors duration-700 ease-out lg: px-6 border-b-dashed border-b border-b-white">ШИЛЭН ДАНС</a>
+                    <a href="#"
+                        class="mt-3 py-2 inline-block cursor-pointer text-white hover:text-ulbar transition-colors duration-700 ease-out lg: px-6 border-b-dashed border-b border-b-white">ХОЛБОО БАРИХ</a>
+                </nav>  
+                    <div class="">
+                        <p class="text-ulbar ml-5 mt-5">ТӨРИЙН ҮЙЛЧИЛГЭЭ</p>
+                      <a href="#" class=" mr-3 ml-3 mt-2 mb-3 text-white flex space-x-3 items-center w-auto text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Авто зам</span></a>
+                      <a href="#" class=" mr-3 ml-3 mt-2 mb-3 text-white flex space-x-3 items-center w-auto text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Авто тээвэр</span></a>
+                      <a href="#" class=" mr-3 ml-3 mt-2 mb-3 text-white flex space-x-3 items-center w-auto text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Агаарын тээвэр</span></a>
+                      <a href="#" class=" mr-3 ml-3 mt-2 mb-3 text-white flex space-x-3 items-center w-auto text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Авто зам</span></a>
+                      <a href="#" class=" mr-3 ml-3 mt-2 mb-3 text-white flex space-x-3 items-center w-auto text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Авто зам</span></a>
+                      <a href="#" class=" mr-3 ml-3 mt-2 mb-3 text-white flex space-x-3 items-center w-auto text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Авто зам</span></a>
+                  </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Main -->
+        <div>
+            <!-- Menu 2 -->
+            <div class="font-sub text-xs uppercase w-full bg-white text-baraan font-bold sticky top-0 z-20">
+                <ul class="flex justify-between px-8 bg-white">
+                    <li>
+                        <i class="fas fa-home px-2.5 py-6 text-lg"></i>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>МЭДЭЭ</span>
+                            </a>
+                            <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Үйл явдлын мэдээ</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Статистик мэдээ</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Цахим сэтгүүл</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Гарын авлага</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Фото мэдээ</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Видео мэдээ</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Ажлын хэсэг, хороодын үйл ажиллагааны мэдээ</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>ТӨРИЙН ҮЙЛЧИЛГЭЭ</span>
+                            </a>
+                            <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Төмөр зам, далайн тээвэр</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Авто зам </a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Агаарын тээвэр</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Авто тээвэр</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Салбарын шагнал</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Салбарын цахим үйлчилгээ</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-40 block whitespace-no-wrap" href="#">Ажлын хэсэг, хороод</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>ТУСГАЙ ЗӨВШӨӨРӨЛ</span>
+                            </a>
+                            <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Авто зам</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Авто тээвэр</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Иргэний нисэх</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Төмөр зам</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Далай, усан зам</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>ИЛ ТОД БАЙДАЛ</span>
+                            </a>
+                                <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                    <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Хүний нөөцийн ил тод байдал</a></li>
+                                    <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Худалдан авах ажиллагааны ил тод байдал</a></li>
+                                    <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Хяналт шинэжилгээ,үнэлгээ,дотоод аудит</a></li>
+                                    <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Хяналт шинэжилгээ,үнэлгээний тайлан </a></li>
+                                    <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Зам тээврийн хяналт</a></li>
+                                </ul>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>ТӨСӨЛ ХӨТӨЛБӨРҮҮД</span>
+                            </a>
+                            <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Гадаадын зээлийн төслүүд</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Гадаадын тусламжын төслүүд</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Үндэсний хөтөлбөр</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Төслийн хяналт шинэжилгээ, үнэлгээ</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Улсын төсвийн төслүүд</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Төслүүдиийн хэрэгжилт</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>ХУУЛЬ, ЭРХ ЗҮЙ</span>
+                            </a>
+                            <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Монгол улсын хууль </a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Засгийн газрын тогтоол</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Ерөнхий сайдын захирамж</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Засгийн газрын хуралдааны тэмдэглэл</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Сайдын тушаал</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Дүрэм журам</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Хууль,дүрэм,журмын жагсаалт</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Хууль журмын төсөл</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Улсын нэгдсэн бүртгэлд бүртгэгдсэн журам</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown inline-block relative py-6">
+                            <a class="inline-flex items-center hover:text-ulbar transition-colors duration-500 ease-out text-base">
+                                <span>СТАНДАРТ,НОРМАТИВ</span>
+                            </a>
+                            <ul class="dropdown-menu absolute hidden bg-ulbar text-white font-sub text-xs z-50">
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Төлөвлөгөө,тайлан</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Стандарт</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Норм,дүрэм</a></li>
+                                <li><a class="hover:bg-orange-400 py-2 px-4 w-32 block whitespace-no-wrap" href="#">Стандартын төсөлд санал авч байна</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div> 
+
+            <!-- Slider -->
+            <div class="my-2 mx-1 w-full h-55vh relative cursor-pointer overflow-hidden item">
+                <div class="absolute hidden h-full w-full opacity-75 z-0 transition-colors duration-700 ease-in-out"></div>
+                <img class="h-64 w-full h-50vh object-cover" src="img/bg3.jpg" alt="" />
+                <p class="absolute inset-x-0 bottom-0 px-5 w-full py-10 text-white bg-gray-700  hover:bg-gray-800  bg-opacity-75 text-2.5xl z-10 font-sub hover:text-ulbar  hover:text-opacity-80">ЗАСГИЙН ГАЗРААС БАТАЛСАН “АГААРЫН ТЭЭВРИЙН САЛБАРТ БАРИМТЛАХ БОДЛОГО” АМЖИЛТТАЙ ХЭРЭГЖИЖ..</p>
+            </div>
+
+            <!-- 3 Picture -->
+            <div class="flex flex-row my-10">
+                <div class="mx-3.75 w-1/3 h-78.5 relative cursor-pointer overflow-hidden">
+                    <img class="h-3/5 w-full object-cover" src="img/1.jfif" alt="">
+                    <div class="inset-x-0 h-2/5 bottom-0 p-2 h-29 w-full text-black bg-white text-base uppercase font-bold font-sub hover:text-ulbar py-6.25 px-5">
+                        Ц.Ганзориг: Зах, худалдааны төвөөр иргэд үйлчлүүлэх боломжгүй
+                    </div>
+                </div>
+                <div class="mx-3.75 w-1/3 h-78.5 relative cursor-pointer overflow-hidden">
+                    <img class="h-3/5 w-full object-cover" src="img/2.jpg" alt="">
+                    <div class="inset-x-0 h-2/5 bottom-0 p-2 h-29 w-full text-black bg-white text-base uppercase font-bold font-sub hover:text-ulbar py-6.25 px-5">
+                        Л.Энх-Амгалан: Троллуудаас айхгүй, хувьсах зардлыг танана
+                    </div>
+                </div>
+                <div class="mx-3.75 w-1/3 h-78.5 relative cursor-pointer overflow-hidden">
+                    <img class="h-3/5 w-full object-cover" src="img/3.png" alt="">
+                    <div class="inset-x-0 h-2/5 bottom-0 p-2 h-29 w-full text-black bg-white text-base uppercase font-bold font-sub hover:text-ulbar py-6.25 px-5">
+                        Б.Жавхлан: 10 их наядын төлөвлөгөөг хэрэгжүүлэхийн тулд МӨНГӨНИЙ НИЙЛҮ…
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row mt-6">
+                 <!-- shine medee -->
+                <ul class="flex flex-col font-sub w-1/2 bg-white rounded mx-3.5 h-120">
+                    <div class="flex flex-row font-sub text-xl px-6 py-2.5 w-full text-ulbar bg-huh uppercase">
+                        <i class=" text-xl text-white fas fa-file-alt text-center pt-1"></i>
+                        <div class="pl-2">
+                            шинэ мэдээ
+                        </div>
+                    </div>
+                    <li class="relative px-1 py-1 container custom-scrollbar overflow-y-scroll">
+                        <div class="flex flex-row w-full p-6.5 rounded  border-r border-b border-dashed border-trueGray-300">
+                            <img class="w-20 h-20" src="img/shinemedee/1.jfif"></img>
+                            <div class="flex flex-col">
+                                <div class="font-sub text-saaral hover:text-ulbar pl-3 uppercase">
+                                    Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock text-saaral"></i>
+                                    <span>10 цагийн өмнө</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row w-full p-6.5 border-r border-b border-dashed border-trueGray-300">
+                            <img class="w-20 h-20" src="img/shinemedee/2.png"></img>
+                            <div class="flex flex-col">
+                                <div class="font-sub text-saaral hover:text-ulbar pl-3 uppercase">
+                                    Тээврийн ерөнхий хуулийн төслийн үзэл баримтлал, хуулийн төсөлд санал авч байна.
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock"></i>
+                                    <span>10 цагийн өмнө</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row w-full p-6.5 border-r border-b border-dashed border-trueGray-300">
+                            <img class="w-20 h-20" src="img/shinemedee/3.png"></img>
+                            <div class="flex flex-col">
+                                <div class="font-sub text-saaral hover:text-ulbar pl-3 uppercase">
+                                    Зам, тээврийн хөгжлийн яам "Би жендэрийн хэвшмэл ойлголтын эсрэг байна" аяныг дэмжиж нэгдлээ.
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock"></i>
+                                    <span>11 цагийн өмнө</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row w-full p-6.5 border-r border-b border-dashed border-trueGray-300">
+                            <img class="w-20 h-20" src="img/shinemedee/4.jpg"></img>
+                            <div class="flex flex-col">
+                                <div class="font-sub text-saaral hover:text-ulbar pl-3 uppercase">
+                                    САЙД Л.ХАЛТАР MҮҮКИА ТИРҮЧЕЛВАМТАЙ УУЛЗАЛТ ХИЙВ
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock"></i>
+                                    <span>12 цагийн өмнө</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                        class="flex flex-row w-full p-6.5 border-r border-b border-dashed border-trueGray-300">
+                        <img class="w-20 h-20" src="img/shinemedee/5.jpg"></img>
+                        <div class="flex flex-col">
+                            <div class="font-sub  text-saaral hover:text-ulbar pl-3 uppercase">
+                                ЗАМ, ТЭЭВРИЙН ХӨГЖЛИЙН САЙД Л.ХАЛТАР БҮГД НАЙРАМДАХ КАЗАХСТАН УЛСААС МОНГОЛ УЛСАД СУУГАА ОНЦ БӨГӨӨД БҮРЭН ЭРХТ ЭЛЧИН САЙД Ж.Ж.АДИЛБАЕВТАЙ ЦАХИМ УУЛЗАЛТ ХИЙВ
+                            </div>
+                            <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                <i class="fas fa-clock"></i>
+                                <span>12 цагийн өмнө</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+            
+                    </li>
+                </ul>
+                 <!-- huuli erh zui -->
+                <ul class="flex flex-col font-sub w-1/2 bg-white rounded mx-3.5 h-120">
+                    <div class="flex flex-row font-sub text-xl px-6 py-2.5 w-full text-ulbar bg-huh uppercase">
+                        <i class=" text-xl text-white fas fa-file-alt text-center pt-1"></i>
+                        <div class="pl-2 ">
+                        Хууль эрх зүй
+                        </div>
+                    </div>
+                    <li class="relative px-1 py-1 container custom-scrollbar overflow-y-scroll">
+                        <div
+                            class="flex flex-row w-full py-2.5 pr-2.5 border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col">
+                                <div class="font-sub text-saaral hover:text-ulbar text-sm pl-3 uppercase">
+                                    Журам батлах тухай “Коронавируст халвар (КОВИД-19)-ын тархалтын түвшинг тогтоож, төрийн байгууллага, хүн, хуулийн этгээдийн үйл ажиллагааг зохицуулах түр журам”
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock "></i>
+                                    <span>2021/03/05</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row w-full py-2.5 pr-2.5 border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col">
+                                <div class="font-sub  text-saaral hover:text-ulbar text-sm pl-3 uppercase">
+                                    Төсвийн хэмнэлтийн талаар авах зарим арга хэмжээний тухай
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-4 pl-2">
+                                    <i class=" fas fa-clock"></i>
+                                    <span> 2021/03/05</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row w-full py-2.5 pr-2.5 border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col">
+                                <div class="font-sub  text-saaral hover:text-ulbar text-sm pl-3 uppercase ">
+                                    Хилийн боомтын талаар авах арга хэмжээний тухай
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock"></i>
+                                    <span>2021/03/05</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-row w-full py-2.5 pr-2.5 border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col">
+                                <div class="font-sub  text-saaral hover:text-ulbar text-sm pl-3 uppercase">
+                                    Тогтоолын хавсралт өөрчлөн батлах тухай /“Түр хороо байгуулах тухай” 2021 оны 29 дүгээр тогтоол/
+                                </div>
+                                <div class="text-primary text-0.5xs text-left pt-2 pl-2">
+                                    <i class="fas fa-clock"></i>
+                                    <span>2021/03/05</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-row w-full py-2.5 pr-2.5 border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col">
+                                <div class="font-sub  text-saaral hover:text-ulbar text-sm pl-3 uppercase">
+                                    Хөрөнгө гаргах тухай /Коронавируст халвар (КОВИД-19)-ын цар тахалтай тэмцэх үйл ажиллагаанд/
+                                </div>
+                                <div class="text-primary text-0.5xs text-left  pt-2 pl-2">
+                                    <i class="fas fa-clock"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+         <!-- salbariin online uilchilgee -->
+            <div class="relative  mt-20 h-70vh">
+                <img class="absolute inset-0 h-full w-full object-cover" style="z-index: -1" src="img/back.jfif" alt="">
+                
+                <h2 class="text-xl text-orng pt-9 pl-5 mb-8 font-roboto font-bold uppercase"><i class="fas fa-globe-americas text-white"></i> &#160; Салбарын онлайн үйлчилгээ</h2>
+                <a href="#" class="uppercase font-roboto text-white m-2 hover:bg-ulbar rounded-sm no-underline p-2 text-center px-3">бүгд </a>
+                <a href="#" class="uppercase font-roboto text-white m-2 hover:bg-ulbar rounded-sm no-underline p-2 text-center px-3">авто тээвэр</a>
+                <a href="#" class="uppercase font-roboto text-white m-2 hover:bg-ulbar rounded-sm no-underline p-2 text-center px-3">агаарын тээвэр</a>
+                <a href="#" class="uppercase font-roboto text-white m-2 hover:bg-ulbar rounded-sm no-underline p-2 text-center px-3">төмөр зам</a>
+                <br><br><br>
+                <div class="grid pl-3 pb-5 pr-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-4">
+            
+                <a href="#" class="text-white  pl-5 flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white  flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+                <a href="#" class="text-white flex space-x-3 items-center text-sm leading-none text-left border border-solid border-ulbar p-4 hover:bg-ulbar"><i class="fa fa-truck text-ulbar block"></i> <span>Тээврийн удирдлагын нэгдсэн систем</span></a>
+              
+              
+              </div>
+              
+            
+            </div>
+             <!-- 2 picture -->
+            <div class="flex flex-row py-10">
+                <div class="mx-3.75 w-1/2 h-auto relative cursor-pointer overflow-hidden">
+                    <div class="absolute bg-black h-full w-full opacity-30 z-0 transition-colors duration-700 ease-in-out"></div>
+                    <img class="h-auto w-full object-cover" src="img/111.jpg" alt="" />
+                    <p class="absolute inset-x-0 bottom-0 p-7.5 w-full text-shadow-md text-white text-xl font-bold z-10 font-sub hover:text-ulbar hover:text-opacity-80 laptop:uppercase">
+                        Автотээврийн салбарын 95 жилийн ойд
+                    </p>
+                </div>
+
+                <div class="mx-3.75 w-1/2 h-auto relative cursor-pointer overflow-hidden">
+                    <div class="absolute bg-black h-full w-full opacity-30 z-0 transition-colors duration-700 ease-in-out"></div>
+                    <img class="h-auto w-full object-cover" src="img/3.png" alt="" />
+                    <p class="absolute inset-x-0 bottom-0 p-7.5 w-full text-shadow-md text-white text-xl font-bold z-10 font-sub hover:text-ulbar  hover:text-opacity-80 laptop:uppercase">
+                        Тээврийн хэрэгслийн улсын дугаарын дуудлага худалдааны цахим хуудасны танилцуулга
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col">
+            <div class="flex flex-row mt-6">
+                <!-- huuliin tusuld sanal awch bn -->
+                <ul class="flex flex-col font-sub w-1/2 bg-white rounded mx-3.5 h-120">
+                    <div class="flex flex-row font-sub text-xl px-6 py-2.5 w-full text-ulbar bg-huh uppercase">
+                        <i class=" text-xl text-white fas fa-balance-scale  text-center pt-1"></i>
+                        <div class="pl-2">
+                            хуулийн төсөлд санал авч байна
+                        </div>
+                    </div>
+                    <li class="relative px-1 py-1 container custom-scrollbar overflow-y-scroll">
+                        <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col text-left pl-1">
+                                <div class="  font-sub text-saaral hover:text-ulbar  uppercase">
+                                    Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                                </div>
+                                <div class="flex justify-start">
+                                    <a class="flex mt-3.75 bg-danger font-bold text-xs py-1 px-1  text-white  transition ease-in-out duration-700 font-sub rounded"> <i class="fas fa-clock pr-2"></i>
+                                       санал авч дууссан</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col text-left pl-1">
+                                <div class="  font-sub text-saaral hover:text-ulbar  uppercase">
+                                    Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                                </div>
+                                <div class="flex justify-start">
+                                    <a class="flex mt-3.75 bg-danger font-bold text-xs py-1 px-1  text-white  transition ease-in-out duration-700 font-sub rounded"> <i class="fas fa-clock pr-2"></i>
+                                       санал авч дууссан</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col text-left pl-1">
+                                <div class="  font-sub text-saaral hover:text-ulbar  uppercase">
+                                    Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                                </div>
+                                <div class="flex justify-start">
+                                    <a class="flex mt-3.75 bg-danger font-bold text-xs py-1 px-1  text-white  transition ease-in-out duration-700 font-sub rounded"> <i class="fas fa-clock pr-2"></i>
+                                       санал авч дууссан</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col text-left pl-1">
+                                <div class="  font-sub text-saaral hover:text-ulbar  uppercase">
+                                    Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                                </div>
+                                <div class="flex justify-start">
+                                    <a class="flex mt-3.75 bg-danger font-bold text-xs py-1 px-1  text-white  transition ease-in-out duration-700 font-sub rounded"> <i class="fas fa-clock pr-2"></i>
+                                       санал авч дууссан</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                            <div class="flex flex-col text-left pl-1">
+                                <div class="  font-sub text-saaral hover:text-ulbar  uppercase">
+                                    Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                                </div>
+                                <div class="flex justify-start">
+                                    <a class="flex mt-3.75 bg-danger font-bold text-xs py-1 px-1  text-white  transition ease-in-out duration-700 font-sub rounded"> <i class="fas fa-clock pr-2"></i>
+                                       санал авч дууссан</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- urgudul gomdol -->
+                <ul class="flex flex-col font-sub w-1/2 bg-white rounded mx-3.5 h-120">
+                    <div class="flex flex-row font-sub text-xl px-6 py-2.5  w-full text-ulbar bg-huh uppercase">
+                        <i class=" text-xl text-white fas fa-paper-plane text-center pt-1"></i>
+                        <div class="pl-2">
+                            өргөдөл, гомдол
+                        </div>
+                    </div>
+                    <select class="w-auto pt-3 pb-3 text-grey-darker border border-sarl  rounded  pl-3 pr-3 mb-3 mt-3 ml-3 " placeholder ="Төрөл сонгох">
+                        <option>Төрөл сонгох</option>
+                        <option>Өргөдөл</option>
+                        <option>Санал</option>
+                        <option>Гомдол</option>
+                        <option>Талархал</option>
+                    </select>
+                    <div class="md:w-full px-3 mb-6 md:mb-0">
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-sarl focus:border-lightBlue-500  rounded py-3 px-4 mb-3"  type="text" placeholder="Овог нэр">                
+                        <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-sarlfocus:border-lightBlue-500 rounded py-3 px-4 mb-3"  type="text" placeholder="Утасны дугаар">
+                        <input class="appearance-none w-full h-4/3 block w-auto h-auto bg-grey-lighter text-grey-darker border border-sarl focus:border-lightBlue-500 rounded py-3 px-4 mb-3"  type="text" placeholder="Санал хүсэлтээ энд бичнэ үү">
+                        <button class="bg-sarl w-full  text-gray-800  py-2 px-4  rounded ">
+                            ИЛГЭЭХ
+                        </button>
+                </ul>
+                <!-- standart normativ -->
+                <ul class="flex flex-col font-sub w-1/2 bg-white rounded mx-3.5 h-120">
+                    <div class="flex flex-row font-sub text-xl px-6 py-2.5 w-full text-ulbar bg-huh uppercase">
+                        <i class=" text-xl text-white fas fa-file-alt text-center pt-1"></i>
+                        <div class="pl-2">
+                        стандарт,НОРМАТИВ
+                        </div>
+                    </div>
+                    <li class="relative px-1 py-1 container custom-scrollbar overflow-y-scroll">
+                    <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                        <div class="flex flex-col text-left pl-1">
+                            <div class=" font-sub text-saaral hover:text-ulbar  uppercase">
+                                Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                            </div>
+                            <div class="flex justify-start">
+                                <a class="flex mt-3.75 bg-sarl text-xs py-1 px-1  text-saaral  transition ease-in-out duration-700 font-sub rounded">төлөвлөгөө тайлан</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                        <div class="flex flex-col text-left pl-1">
+                            <div class=" font-sub text-saaral hover:text-ulbar  uppercase">
+                                Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                            </div>
+                            <div class="flex justify-start">
+                                <a class="flex mt-3.75 bg-sarl text-xs py-1 px-1  text-saaral  transition ease-in-out duration-700 font-sub rounded">төлөвлөгөө тайлан</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                        <div class="flex flex-col text-left pl-1">
+                            <div class=" font-sub text-saaral hover:text-ulbar  uppercase">
+                                Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                            </div>
+                            <div class="flex justify-start">
+                                <a class="flex mt-3.75 bg-sarl text-xs py-1 px-1  text-saaral  transition ease-in-out duration-700 font-sub rounded">төлөвлөгөө тайлан</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                        <div class="flex flex-col text-left pl-1">
+                            <div class=" font-sub text-saaral hover:text-ulbar  uppercase">
+                                Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                            </div>
+                            <div class="flex justify-start">
+                                <a class="flex mt-3.75 bg-sarl text-xs py-1 px-1  text-saaral  transition ease-in-out duration-700 font-sub rounded">төлөвлөгөө тайлан</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                        <div class="flex flex-col text-left pl-1">
+                            <div class=" font-sub text-saaral hover:text-ulbar  uppercase">
+                                Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                            </div>
+                            <div class="flex justify-start">
+                                <a class="flex mt-3.75 bg-sarl text-xs py-1 px-1  text-saaral  transition ease-in-out duration-700 font-sub rounded">төлөвлөгөө тайлан</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row w-full p-3 rounded  border-r border-b border-dashed border-trueGray-300">
+                        <div class="flex flex-col text-left pl-1">
+                            <div class=" font-sub text-saaral hover:text-ulbar  uppercase">
+                                Сайд Л.Халтар төмөр замын бүтээн байгуулалтын явцтай танилцав
+                            </div>
+                            <div class="flex justify-start">
+                                <a class="flex mt-3.75 bg-sarl text-xs py-1 px-1  text-saaral  transition ease-in-out duration-700 font-sub rounded">төлөвлөгөө тайлан</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                </ul>
+            </div>
+            </div>
+<!-- toon medeelel -->
+            <div class="pt-10 rounded-md">
+                <ul class="font-sub w-full bg-white rounded mx-3.5 h-120">
+                    <div class="flex flex-row font-sub text-xl px-6 py-2.5 text-ulbar bg-huh uppercase">
+                        <i class=" text-xl text-white fas fa-file-alt text-center pt-1"></i>
+                            <div class="pl-2 flex flex-row">
+                            тоон мэдээлэл
+                            <div class=" font-bold ml-3 rounded-md bg-green-600 text-sm pl-1 pr-1 pt-1 pb-1 text-white ">2020 оны дөрөвдүгээр улирлын байдлаар </div>
+                            </div>
+                    </div>
+                    <div class="grid pl-3 pb-5 pr-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-2">
+            
+                        <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+
+                        <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                            <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                            <div class="flex flex-col">
+                                <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                                <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                            </div>
+                        <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                      <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                    <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                    <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                     <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                    <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                    <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                     <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                     <a href="#" class="mt-7 pt-3 pb-3 flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                    <a href="#" class="mt-7 pt-3  flex space-x-3 text-sm  text-left border rounded-md  border-sarl ">
+                        <i class=" pl-5  pt-2  text-4xl text-gray-400 fas fa-road  "></i> 
+                        <div class="flex flex-col">
+                            <h5 class="text-huh pr-5 pl-3 ">УЛСЫН ЧАНАРТАЙ АВТО ЗАМЫН УРТ(км):</h5>
+                            <h4 class="text-ulbar pl-3 text-2xl ">14918.7</h4>
+                        </div>
+                      </div>
+                </ul>
+                </div>
+
+<!-- sanal asuulga -->
+            <div class="flex flex-col">
+                <div class=" rounded-md w-full">
+                    <ul class="font-sub w-full bg-white rounded mx-3.5 h-100 ">
+                        <div class="flex flex-row font-sub text-xl px-6 py-2.5 text-ulbar bg-huh uppercase">
+                            <i class=" text-xl text-white fas fa-file-alt text-center pt-1"></i>
+                            <div class="pl-2">
+                                санал асуулга
+                            </div>
+                        </div>
+                        <div class="flex flex-row">
+                            <div class="block mt-4 pt-4">
+                                <p class=" pl-5 font-bold">Та манай вэбсайтаас ямар төрлийн мэдээлэл түлхүү авах сонирхолтой байна вэ?</p>
+                                <div class="mt-2 pl-8 ">
+                                <div>
+                                    <label class="border-t-2 inline-flex items-center">
+                                    <input type="radio" class="form-radio" name="radio" value="1" checked>
+                                    <span class="ml-2 mt-2">Салбарын төрийн үйлчилгээний талаар</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio" name="radio" value="2">
+                                    <span class="ml-2 mt-2"> Салбарын цаг үеийн мэдээ</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio" name="radio" value="3">
+                                    <span class="ml-2 mt-2">Ил тод нээлттэй байдлын талаар</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio" name="radio" value="4" checked>
+                                    <span class="ml-2 mt-2">Салбарын тендерийн мэдээлэл</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                    <input type="radio" class="form-radio" name="radio" value="5" checked>
+                                    <span class="ml-2 mt-2">Хууль эрх зүй, захирамж тушаал</span>
+                                    </label>
+                                </div>
+                                <button class="mr-5 ml-5 mt-2 items-center  pl-5 pr-5 pt-3 pb-3 bg-green-500 text-white hover:bg-green-700">Санал өгөх</button>
+                                </div>
+                            </div>
+                            <div class="m-4">
+                                <img class="w-auto h-84 object-cover" src="img/graph.png"> 
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+<!-- holboosuud-->
+            <div class=" w-full flex flex-row justify-center">
+                <div class="flex flex-row bg-white mb-6 mt-6">
+                    <a href="https://president.mn/" class="mt-7 pl-5 mr-4  ml-5 mb-6 pt-3 pb-3 flex space-x-3 text-sm text-left border border-sarl ">
+                           <img class="h-12 w-auto pt-2 pl-10 "src="img/logo (1).png" alt="">
+                            <div class="flex flex-col">
+                                <p class="text-saaral pl-2 pr-10 font-bold text-sm ">МУ-ын Ерөнхийлөгч</p>
+                                <p class="text-saaral pl-3 text-sm ">www.president.mn</p>
+                             </div> 
+                     
+                    </a>
+                    <a href="https://president.mn/" class="mt-7 pl-5 mr-4   ml-5 mb-6 pt-3 pb-3 flex space-x-3 text-sm text-left border border-sarl ">
+                           <img class="h-12 w-auto pt-2 pl-10 "src="img/logo (1).png" alt="">
+                            <div class="flex flex-col">
+                                <p class="text-saaral pl-2  pr-10 font-bold text-sm ">МУ-ын Ерөнхийлөгч</p>
+                                <p class="text-saaral pl-3  text-sm ">www.president.mn</p>
+                             </div>     
+                    </a>
+                    <a href="https://president.mn/" class="mt-7 pl-5 mr-4   ml-5 mb-6 pt-3 pb-3 flex space-x-3 text-sm text-left border border-sarl ">
+                           <img class="h-12 w-auto pt-2 pl-10 "src="img/logo (1).png" alt="">
+                            <div class="flex flex-col">
+                                <p class="text-saaral pl-2 pr-10 font-bold text-sm ">МУ-ын Ерөнхийлөгч</p>
+                                <p class="text-saaral pl-3 text-sm ">www.president.mn</p>
+                             </div> 
+                    </a>
+                    <a href="https://president.mn/" class="mt-7 pl-5 mr-3  ml-5 mb-6 pt-3 pb-3 flex space-x-3 text-sm text-left border border-sarl ">
+                           <img class="h-12 w-auto pt-2 pl-10"src="img/logo (1).png" alt="">
+                            <div class="flex flex-col">
+                                <p class="text-saaral pl-2 pr-10 font-bold text-sm ">МУ-ын Ерөнхийлөгч</p>
+                                <p class="text-saaral pl-3 text-sm ">www.president.mn</p>
+                             </div> 
+                        
+                    </a>
+                </div>
+            </div>
+<!--footer-->
+                <footer class="h-full">
+                    <div class="flex flex-col py-5 px-3 sm:px-14 md:px-20">
+                        <div class="w-full flex flex-row border-t-2 border-ulbar py-10">
+                            <div class="flex flex-col w-1/4 px-3.75">
+                                <h4 class="text-huh font-bold border-b border-ulbar pb-3.75 mb-5 ">МЭДЭЭ МЭДЭЭЛЭЛ</h4>
+                                <ul class="text-ulbar">
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>үйл явдлын мэдээ</p></a>
+                                        </li>
+                                    <li class="flex flex-row"> 
+    
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                    <a href="#" class="hover:underline"><p>Статистик мэдээ</p></a>
+                                    
+                                    </li>
+                                    <li class="flex flex-row">
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                    <a href="#" class="hover:underline"><p>өргөдөл,гомдол,шүүхийн шатанд буй хэргийн мэдээлэл</p></a>
+                                    
+                                    </li>
+                                    <li class="flex flex-row">
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Цахим сэтгүүл</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Гарын авлага</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Фото мэдээ </p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Видео мэдээ</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                    <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Ажлын хэсэг хороодын үйл ажиллагааны мэдээлэл </p></a>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
+    
+                            <div class="flex flex-col w-1/4 px-3.75">
+                                <h4 class="text-huh font-bold border-b border-ulbar pb-3.75 mb-5">ТӨРИЙН ҮЙЛЧИЛГЭЭ</h4>                    
+                                <ul class="text-ulbar">
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Төмөр зам далайн тээвэр</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Авто зам</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Автотээвэр</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Салбарын шагнал</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Салбарын цахим үйлчилгээ</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Ажлын хэсэг,хороод </p></a>
+                                        
+                                    </li>
+                                </ul>
+    
+                            </div>
+                                
+                            <div class="flex flex-col w-1/4 px-3.75">
+                                <h4 class="text-huh font-bold border-b border-ulbar pb-3.75 mb-5">ТӨСӨЛ ХӨТӨЛБӨРҮҮД</h4>
+                                <ul class="text-ulbar">
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Гадаадын зээлийн төслүүд</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Гадаадын тусламжын төслүүд </p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Үндэсний хөтөлбөр</p></a>
+                                        
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Төслийн хяналт-шинэжилгээ, үнэлгээ </p></a>
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Улсын төсвийн төслүүд</p></a>
+                                    </li>
+                                    <li class="flex flex-row">
+                                        <i class="fas fa-angle-right text-black pr-5 text-sm pt-1.5"></i>
+                                        <a href="#" class="hover:underline"><p>Төслүүдийн хэрэгжилт</p></a>
+                                    </li>
+                                
+                                </ul>
+                            </div>
+                            <div class="flex flex-col w-1/4 px-3.75">
+                                <h4 class="text-huh font-bold border-b border-ulbar pb-3.75 mb-5">ХАРИЛЦАХ ХАЯГ</h4>                
+                                    <ul class="text-saaral">
+                                        <p class="text-saaral font-bold">Хаяг:</p> 
+                                        Монгол Улс, Улаанбаатар хот, Чингисийн өргөн чөлөө -11, Засгийн газрын 13 дугаар байр, зип:14251 
+                                        <p class="text-saaral font-bold">Утас:</p>
+                                        976-(51)263179
+                                        <p class="text-saaral font-bold">Факс:</p>
+                                        (976-11)-312315
+                                        <p class="text-saaral font-bold">И-мэйл:</p>
+                                        <a href="#" class=" text-ulbar">info@mrtd.gov.mn</a>
+                                        <p class="text-saaral font-bold">Фэйсбүүк хуудас:</p>
+                                        <a href="#" class="text-ulbar">https://www.facebook.com/MRTD.GOV.MN</a>
+                                        <p class="text-saaral font-bold">Твиттер хуудас: </p>
+                                        <a href="#" class="text-ulbar">http://twitter.com/MrtdGovMn></a> 
+                                    </ul>
+                                
+                            </div>
+                            
+                        </div> 
+                        <br><br>
+    
+                        <p class="text-gray-400 text-sm">© COPYRIGHT 2021 | ЗАМ, ТЭЭВРИЙН ХӨГЖЛИЙН ЯАМ</p>
+    
+                </div> 
+                </footer>
+            </div>
+            
+        </div>  
+    </div>
+</body>
+</html>
